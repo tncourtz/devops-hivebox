@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 // Import the 'express' module
 const express_1 = __importDefault(require("express"));
+const version_1 = require("./utils/version");
 // Create an Express application
 const app = (0, express_1.default)();
 // Set the port number for the server
@@ -18,4 +19,5 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     // Log a message when the server is successfully running
     console.log(`Server is running on http://localhost:${port}`);
+    (0, version_1.printVersionAndExit)();
 });

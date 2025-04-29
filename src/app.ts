@@ -1,6 +1,6 @@
 // Import the 'express' module
 import express, { Request, Response } from 'express';
-
+import { printVersionAndExit } from './utils/version';
 // Create an Express application
 const app = express();
 
@@ -17,4 +17,5 @@ app.get('/', (req: Request, res: Response) => {
 app.listen(port, () => {
   // Log a message when the server is successfully running
   console.log(`Server is running on http://localhost:${port}`);
+  printVersionAndExit();
 });
